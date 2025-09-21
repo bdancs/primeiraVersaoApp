@@ -197,6 +197,8 @@ let investimentos_usuario = [
   }
 ]
 
+const userPassword = "admin123!@#"; 
+
 function App() {
   const [currentScreen, setCurrentScreen] = useState('auth') // 'auth', 'main', 'investir', 'historico'
   const [isLogin, setIsLogin] = useState(true)
