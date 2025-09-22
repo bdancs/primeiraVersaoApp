@@ -8,7 +8,6 @@ on:
 
 # Lista de trabalhos a serem executados
 jobs:
-  # ANÁLISE SAST COM SONARCLOUD
   sonarcloud_scan:
     name: SonarCloud SAST Scan
     runs-on: ubuntu-latest
@@ -21,6 +20,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          # ADICIONE ESTA SEÇÃO 'with:' ABAIXO DO 'env:'
+          args: >
+            -Dsonar.organization=bdancs
+            -Dsonar.projectKey=bdancs_primeiraVersaoApp
+
 
   # ANÁLISE SCA COM SNYK
   snyk_scan:
