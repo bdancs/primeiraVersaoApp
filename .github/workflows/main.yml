@@ -27,6 +27,7 @@ jobs:
             -Dsonar.projectKey=bdancs_primeiraVersaoApp
 
 
+
   # ANÁLISE SCA COM SNYK
   snyk_scan:
     name: Snyk SCA Scan
@@ -34,6 +35,8 @@ jobs:
     needs: sonarcloud_scan 
     steps:
       - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm install
       - name: Snyk Scan
         uses: snyk/actions/node@master
         env:
