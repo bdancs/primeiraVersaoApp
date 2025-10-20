@@ -10,6 +10,9 @@ import './App.css'
 
 // ===== BASES DE DADOS SIMULADAS =====
 
+// Teste vulnerabilidade
+const databasePassword = "MySuperSecretPassword123!";
+
 // Base de dados de usuários
 let usuarios_base = [
   {
