@@ -35,8 +35,10 @@ jobs:
     needs: sonarcloud_scan 
     steps:
       - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744
+      - name: Remove existing package-lock.json
+        run: rm -f package-lock.json
       - name: Install dependencies
-        run: npm install --force
+        run: npm install --force 
       - name: Snyk Scan
         uses: snyk/actions/node@de2dda699bf7276d103ed6a72a5bc5a1871ad658
         env:
